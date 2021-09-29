@@ -19,8 +19,8 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  transition: all 1s;
-  animation: 2s linear 0s infinite roullete;
+  transition: all 0s;
+  animation: 8s linear 0s infinite roullete;
 }
 
 #cover {
@@ -42,9 +42,9 @@ ul {
 
 @keyframes roullete {
   from { 
-    transform: translateY(0);
+    transform: translateY(10);
   }
   to { 
-    transform: translateY(-5.8em);
+    transform: translateY(-4em);
   }
 }
