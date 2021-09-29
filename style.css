@@ -1,0 +1,44 @@
+
+.shape-container {
+	width: 100%;
+	-webkit-perspective: 750;
+}
+
+.shape-cube {
+	position: relative;
+	top: 120px;
+	margin: 0 auto;
+	width: 250px; height: 250px;
+
+	-webkit-animation: spin 20s infinite linear;
+	-webkit-transform-style: preserve-3d;
+}
+
+
+.shape-cube > div {
+	border: 1px solid #333;
+	position: absolute;
+	width: 250px; height: 250px;
+	-webkit-border-radius: 4px;
+	-webkit-transition: -webkit-transform 2s;
+}
+
+.shape-cube > div img {
+    width: 100%; 
+    height: 100%;
+    background: #0f4beb;
+}
+
+/* This is where the 3D magic happens */
+@-webkit-keyframes spin {
+	from { -webkit-transform: rotateY(0) rotateX(0); }
+	to   { -webkit-transform: rotateY(-360deg) rotateX(360deg); }
+}
+
+/* 3D positioning for each of the images/links */
+.one { -webkit-transform: rotateX(90deg) translateZ(125px); }
+.two { -webkit-transform: translateZ(125px); }
+.three { -webkit-transform: rotateY(90deg) translateZ(125px); }
+.four { -webkit-transform: rotateY(180deg) translateZ(125px); }
+.five { -webkit-transform: rotateY(-90deg) translateZ(125px); }
+.six { -webkit-transform: rotateX(-90deg) translateZ(125px); }
