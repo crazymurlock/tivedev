@@ -1,44 +1,46 @@
-
-.shape-container {
-	width: 100%;
-	-webkit-perspective: 750;
+h1::before {  
+  transform: scaleX(0);
+  transform-origin: bottom right;
 }
 
-.shape-cube {
-	position: relative;
-	top: 120px;
-	margin: 0 auto;
-	width: 250px; height: 250px;
-
-	-webkit-animation: spin 20s infinite linear;
-	-webkit-transform-style: preserve-3d;
+h1:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
-
-.shape-cube > div {
-	border: 1px solid #333;
-	position: absolute;
-	width: 250px; height: 250px;
-	-webkit-border-radius: 4px;
-	-webkit-transition: -webkit-transform 2s;
+h1::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0 0 0 0;
+  background: hsl(200 100% 80%);
+  z-index: -1;
+  transition: transform .3s ease;
 }
 
-.shape-cube > div img {
-    width: 100%; 
-    height: 100%;
-    background: #0f4beb;
+h1 {
+  position: relative;
+  font-size: 5rem;
 }
 
-/* This is where the 3D magic happens */
-@-webkit-keyframes spin {
-	from { -webkit-transform: rotateY(0) rotateX(0); }
-	to   { -webkit-transform: rotateY(-360deg) rotateX(360deg); }
+html {
+  block-size: 100%;
+  inline-size: 100%;
 }
 
-/* 3D positioning for each of the images/links */
-.one { -webkit-transform: rotateX(90deg) translateZ(125px); }
-.two { -webkit-transform: translateZ(125px); }
-.three { -webkit-transform: rotateY(90deg) translateZ(125px); }
-.four { -webkit-transform: rotateY(180deg) translateZ(125px); }
-.five { -webkit-transform: rotateY(-90deg) translateZ(125px); }
-.six { -webkit-transform: rotateX(-90deg) translateZ(125px); }
+body {
+  min-block-size: 100%;
+  min-inline-size: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  display: grid;
+  place-content: center;
+  font-family: system-ui, sans-serif;
+}
+
+@media (orientation: landscape) {
+  body {
+    grid-auto-flow: column;
+  }
+}
